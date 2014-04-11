@@ -839,8 +839,8 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     return nSubsidy + nFees;
 }
 
-static const int64 nTargetTimespan = 0.35 * 24 * 60 * 60; // SmallChange: 0.35 days
-static const int64 nTargetSpacing = 15; // SmallChange: 15 seconds
+static const int64 nTargetTimespan = 0.35 * 24 * 60 * 60; // Anarchid: 0.35 days
+static const int64 nTargetSpacing = 15; // Anarchid: 15 seconds
 static const int64 nInterval = nTargetTimespan / nTargetSpacing;
 
 // Thanks: Balthazar for suggesting the following fix
@@ -2007,7 +2007,7 @@ bool LoadBlockIndex(bool fAllowNew)
             return false;
     
 	// Genesis block:
-	// block.nTime = 1366559428 
+	// block.nTime = 1397257908
 	// block.nNonce = 2085386442 
 	// block.GetHash = 384b060671f4a93948e9c168216dadb0ca2fbc54aa11c86b0345b6af1c59b2f5
 	// CBlock(hash=384b060671f4a93948e9, PoW=00000951e146b0026411, ver=1,
@@ -2031,13 +2031,13 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1366559428;
+        block.nTime    = 1397257908;
         block.nBits    = 0x1e0ffff0;
         block.nNonce   = 2085386442;
 
         if (fTestNet)
         {
-            block.nTime    = 1366559428;
+            block.nTime    = 1397257908;
             block.nNonce   = 386402991;
         }
 
